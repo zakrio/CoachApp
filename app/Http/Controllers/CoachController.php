@@ -31,14 +31,6 @@ final class CoachController extends Controller
         ]);
     }
 
-    //    /**
-    //     * Store a newly created resource in storage.
-    //     */
-    //    public function store(Request $request): void
-    //    {
-    //        //
-    //    }
-    //
     /**
      * Display the specified resource.
      */
@@ -52,20 +44,4 @@ final class CoachController extends Controller
             'cycle' => $cycle,
         ]);
     }
-    //
-    //    /**
-    //     * Update the specified resource in storage.
-    //     */
-    //    public function update(Request $request, Coach $coach): void
-    //    {
-    //        //
-    //    }
-    //
-    //    /**
-    //     * Remove the specified resource from storage.
-    //     */
-    //    public function destroy(Coach $coach): void
-    //    {
-    //        //
-    //    }
 }
