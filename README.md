@@ -94,7 +94,7 @@ Add the following header to your API requests:
 Authorization: Bearer {your-token}
 ```
 # Tooling and Testing
-## Linting & Tests]
+## Linting & Tests
 This project uses the following tools:
 - [Pint: PHP linting.]
 - [Pest: Unit tests for the application.]
