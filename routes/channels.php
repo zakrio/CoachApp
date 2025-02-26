@@ -12,8 +12,5 @@ Broadcast::channel('appointment.{appointmentId}', static function (User $user, i
     /** @var Appointment $appointment */
     $appointment = Appointment::query()->findOrFail($appointmentId);
 
-    //    $isUserAuthorized = $user->id === $appointment->user->id;
-    //    $isCoachAuthorized = $appointment->coach && $user->id === $appointment->coach->id;
-
     return $appointment;
 });
