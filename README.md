@@ -103,20 +103,20 @@ This project uses the following tools:
 Run the tests with the following command:
 
 ```shell
-npm run test
+composer test
 ```
 
 Specific test commands:
 ```textmate
-Linting: npm run test:lint
-Refactoring: npm run test:refactor
-Type-checking: npm run test:types
-Unit testing: npm run test:unit
+Linting: composer test:lint
+Refactoring: composer test:refactor
+Type-checking: composer test:types
+Unit testing: composer test:unit
 ```
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Thank you for considering contributing to the CoachApp! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
 ## Code of Conduct
 
