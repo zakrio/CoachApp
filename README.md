@@ -7,47 +7,112 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Coach Appointment Scheduling System
+This project is a back-end system for managing coach appointments. The goal is to develop an application that allows users to schedule appointments with coaches, each of whom has their own working schedule. Appointments must only be scheduled within the available times of the coach, and overlapping appointments are not allowed.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The system is built with Laravel as the framework and uses a MySQL database to store data about coaches, their schedules, and scheduled appointments. The application provides an API that allows users to view coaches, check available times, and schedule appointments. After a successful appointment creation, both the coach and the user will receive a confirmation email.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Purpose of the Application
+The application provides a platform for managing coaches, their availability, and scheduling appointments by users. This is done via a RESTful API that supports the following features:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [View a list of coaches]
+- [View available times for a coach]
+- [Schedule an appointment with a coach]
+- [Receive a confirmation email after a successful appointment]
+  Functionality
+  The application supports the following key functionalities:
 
-## Learning Laravel
+1. Retrieve List of Coaches
+   Users can retrieve a list of coaches along with details of their availability.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. Retrieve Available Times
+   Users can retrieve the available times for a specific coach so they can select a suitable time.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+3. Schedule an Appointment
+   Users can schedule an appointment with a coach at an available time.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. Confirmation Email
+   After successfully scheduling an appointment, both the coach and the user will receive a confirmation email with the appointment details.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+# Installation
+Follow the steps below to set up the project locally on your machine:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 1. Clone the repository:
+```shell 
+https://github.com/zakrio/CoachApp.git
+```
+
+## 2. Install the necessary dependencies:
+```shell
+composer install
+npm install
+```
+
+## 3. Copy the example .env file:
+
+```shell
+cp .env.example .env
+```
+
+## 4. Generate the application key:
+```shell
+php artisan migrate:fresh --seed
+```
+## 5. Start the server:
+```shell
+php artisan serve
+```
+
+# API Endpoints
+The API consists of the following endpoints:
+
+## 1. /api/coaches
+```text
+GET|HEAD   api/coaches
+GET|HEAD   api/coaches/{coach}
+```
+
+## 2. /api/appointments
+```text
+POST       api/appointments
+GET|HEAD   api/appointments/{appointment}
+```
+
+After successfully creating an appointment, both the coach and the user will receive a confirmation email with details of the appointment.
+The mail can be found in the logs!
+
+# API Authentication (Sanctum)
+The API uses Sanctum for authentication. Follow the steps below to generate a token for testing the API:
+
+## use API token: (after the seed the token will be printed to the logs)
+
+Add the following header to your API requests:
+
+```text
+Authorization: Bearer {your-token}
+```
+# Tooling and Testing
+## Linting & Tests]
+This project uses the following tools:
+- [Pint: PHP linting.]
+- [Pest: Unit tests for the application.]
+- [PHPStan: Static analysis for PHP code. (level max)]
+
+Run the tests with the following command:
+
+```shell
+npm run test
+```
+
+Specific test commands:
+```textmate
+Linting: npm run test:lint
+Refactoring: npm run test:refactor
+Type-checking: npm run test:types
+Unit testing: npm run test:unit
+```
 
 ## Contributing
 
@@ -55,11 +120,7 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 ## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+In order to ensure that the CoachApp community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
 ## License
 
